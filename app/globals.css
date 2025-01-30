@@ -15,3 +15,18 @@ body {
   background: #060714;
   font-family: Sora, "Montserrat";
 }
+
+.bg-pattern {
+  background-image: url("/image/Group1.png"); /* No need for ".." */
+  background-position: center;
+  background-size: cover; /* Ensures the image covers the element */
+  background-repeat: no-repeat; /* Prevents tiling */
+}
+/* In your globals.css */
+.inter-font {
+  font-family: var(--font-inter);
+}
+
+.sora-font {
+  font-family: var(--font-sora);
+}
