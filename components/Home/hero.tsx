@@ -1,52 +1,51 @@
-import React from 'react'
-import Header from '../header'
-import Image from 'next/image'
-import Input from '../ui/input';
+import React from "react";
+import Header from "../header";
+import Image from "next/image";
+import Input from "../ui/input";
+import { Logos } from "../../utils/HomepageContents";
 
 export default function Hero() {
   return (
     <section className="bg-pattern min-h-screen">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <Header />
-        <div className="flex items-center justify-center pt-[182px] pb-[55px]">
+
+        {/* Text Image */}
+        <div className="flex items-center justify-center py-12 sm:py-16 lg:pt-[182px] lg:pb-[55px]">
           <Image
             src="/image/Text.png"
             alt="images of the text"
             width={500}
             height={500}
+            className="max-w-full h-auto"
           />
         </div>
+
+        {/* Search Input */}
         <div className="flex items-center justify-center pb-[222px]">
           <Input />
         </div>
-        <div className="flex items-center justify-center gap-[110px]">
-          <div className="w-[85px] h-[45px] object-cover">
-            <Image
-              src="/image/RitterSport.png"
-              alt="logos"
-              width={500}
-              height={500}
-            />
-          </div>
-          <div className="w-[85px] h-[45px] object-cover">
-            <Image src="/image/Vector.png" alt="logos" width={500} height={500} />
-          </div>
-          <div className='w-[85px] h-[45px] object-cover'>
-            <Image
-              src="/image/Vector(1).png"
-              alt="logos"
-              width={500}
-              height={500}
-            />
-          </div>
-          <div className='w-[85px] h-[45px] object-cover' >
-            <Image
-              src="/image/Vector(2).png"
-              alt="logos"
-              width={500}
-              height={500}
-            />
-          </div>
+
+        {/* Logos */}
+        <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 lg:gap-[110px]">
+          {Logos.map(
+            (logo, index) =>
+              logo.image && (
+                <div
+                  key={index}
+                  className="w-[60px] h-[30px] sm:w-[75px] sm:h-[40px] lg:w-[85px] lg:h-[45px]"
+                >
+                  <Image
+                    src={logo.image}
+                    alt={`logo ${index + 1}`}
+                    width={85}
+                    height={45}
+                    objectFit="contain"
+                    className="w-full h-full"
+                  />
+                </div>
+              )
+          )}
         </div>
       </div>
     </section>
