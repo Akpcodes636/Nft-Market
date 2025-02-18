@@ -16,3 +16,19 @@ export const NavLinks = [
     router: "",
   },
 ];
+
+export const Logos = [
+  {
+    image: "/image/RitterSport.png",
+  },
+  {
+    image: "/image/Vector.png",
+  },
+  {
+    image: "/image/Vector(1).png",
+  },
+  {},
+  {
+    image: "/image/Vector(2).png",
+  },
+];
